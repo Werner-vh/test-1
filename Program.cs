@@ -1,10 +1,30 @@
-﻿namespace new_project_test
+﻿using System;
+
+namespace new_project_test
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("This is the first line");
+            Console.WriteLine("enter your birthday");
+            string input = Console.ReadLine();
+            int first = input.IndexOf('/');
+            int second = input.IndexOf('/', first + 1);
+
+            string daystr = input.Substring(0, first);
+            string monthstr = input.Substring(first + 1, second - first - 1);
+            string yearstr = input.Substring(second + 1);
+
+            int day = int.Parse(daystr);
+            int month = int.Parse(monthstr);
+            int year = int.Parse(yearstr);
+
+            Console.WriteLine($"year: {year}");
+            Console.WriteLine($"month: {month}");
+            Console.WriteLine($"day: {day}");
+
+            Console.ReadLine();
         }
 
 		static void JacksMethod()
